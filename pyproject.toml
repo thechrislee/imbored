@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "imbored"
 version = "0.1.0"
-description = ""
+description = "Returns a list of events"
 authors = ["Chris Lee <chris@noreply.github.com>"]
 
 [tool.poetry.dependencies]
