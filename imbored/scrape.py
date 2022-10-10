@@ -2,22 +2,17 @@
 """
 
 import requests
-from bs4 import beautifulsoup
+from bs4 import BeautifulSoup
 
-def Scraper():
-    
+
+class Scrape:
     def __init__(self, url: str) -> None:
         self.url = url
 
-    @property
-    def url(self) -> str:
-        return getattr(self, "_url", "https://www.thisiscleveland.com/things-to-do/event-calendar")
-
-    def get_events(self) -> str:
+    def get_events(self):
         """
         get the events
         """
         r = requests.get(self.url)
-        soup = beautifulsoup(r.text, "html.parser")
-        return soup.prettify()
-
+        soup = BeautifulSoup(r.text, "html.parser")
+        return r.status_code
