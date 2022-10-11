@@ -1,11 +1,16 @@
 """"""
 from .scrape import Scrape
+import json
+
 
 def run():
     """ """
     url = "https://www.thisiscleveland.com/things-to-do/event-calendar"
-    scraper = Scrape(url)
-    print(scraper.get_events())
+    scraper = Scrape()
+    events = scraper.get_events()
+    print(json.dumps(events[0], indent=4))
+    print(len(events))
+
 
 if __name__ == "__main__":
-    print(run())
+    exit(run())
