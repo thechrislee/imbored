@@ -16,20 +16,6 @@ class Event:
     end_date: str
 
 
-class Event2(BaseModel):
-    """"""
-
-    name: str
-    location: Location
-    offers: dict
-    start_date: datetime
-    end_date: datetime
-
-class Location(BaseModel):
-    """"""
-    address: Address
-    name: str
-
 @dataclass
 class Place:
     """class for places"""
