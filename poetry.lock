@@ -170,6 +170,21 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
+name = "pydantic"
+version = "1.10.2"
+description = "Data validation and settings management using python type hints"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+typing-extensions = ">=4.1.0"
+
+[package.extras]
+dotenv = ["python-dotenv (>=0.10.4)"]
+email = ["email-validator (>=1.0.3)"]
+
+[[package]]
 name = "pyparsing"
 version = "3.0.9"
 description = "pyparsing module - Classes and methods to define and execute parsing grammars"
@@ -244,6 +259,14 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "typing-extensions"
+version = "4.4.0"
+description = "Backported and Experimental Type Hints for Python 3.7+"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "urllib3"
 version = "1.26.12"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -259,7 +282,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "6f4028ea5177c0497a0b98f60f45f713cbf7ce72252718c6b68998a25a838dfc"
+content-hash = "d5534f151549295963292a73bdfddfeafb9f32f64c0fae1f06f366e5c3e3655c"
 
 [metadata.files]
 atomicwrites = []
@@ -278,10 +301,12 @@ pathspec = []
 platformdirs = []
 pluggy = []
 py = []
+pydantic = []
 pyparsing = []
 pytest = []
 requests = []
 soupsieve = []
 toml = []
 tomli = []
+typing-extensions = []
 urllib3 = []
