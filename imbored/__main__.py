@@ -8,8 +8,8 @@ def run():
     url = "https://www.thisiscleveland.com/things-to-do/event-calendar"
     scraper = Scrape()
     events = scraper.get_events()
-    print(json.dumps(events[0], indent=4))
-    print(len(events))
+    events
+    # print(json.dumps(events[0], indent=4))
 
 
 if __name__ == "__main__":

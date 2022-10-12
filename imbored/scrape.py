@@ -4,6 +4,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+from .event import Event, Address, Offer
 
 
 class Scrape:
@@ -21,4 +22,16 @@ class Scrape:
             json.loads(data.text)
             for data in soup.find_all("script", type="application/ld+json")
         ]
-        return event_data
+
+        for event in event_data:
+            event["location"]["address"]["type"] = event["location"]["address"].pop(
+                "@type"
+            )
+            event["offers"]["type"] = event["offers"].pop("@type")
+            print(json.dumps(event, indent=4))
+
+    def print_events(
+        self,
+    ) -> None:
+        """Print the events"""
+        pass

@@ -14,10 +14,13 @@ class Event(BaseModel):
     start_date: datetime
     end_date: datetime
 
+
 class Location(BaseModel):
     """"""
+
     address: Address
     name: str
+
 
 class Address(BaseModel):
     """class for addresses"""
@@ -27,7 +30,6 @@ class Address(BaseModel):
     region: str
     postal_code: str
     street: str
-
 
 
 class Offer(BaseModel):
