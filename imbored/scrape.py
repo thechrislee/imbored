@@ -28,7 +28,9 @@ class Scrape:
                 "@type"
             )
             event["offers"]["type"] = event["offers"].pop("@type")
-            print(json.dumps(event, indent=4))
+            address = Address(**event["location"]["address"])
+            print(address)
+            #print(json.dumps(event, indent=4))
 
     def print_events(
         self,
