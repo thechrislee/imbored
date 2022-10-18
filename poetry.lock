@@ -95,6 +95,17 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
+name = "commonmark"
+version = "0.9.1"
+description = "Python parser for the CommonMark Markdown spec"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.extras]
+test = ["hypothesis (==3.55.3)", "flake8 (==3.7.8)"]
+
+[[package]]
 name = "idna"
 version = "3.4"
 description = "Internationalized Domain Names in Applications (IDNA)"
@@ -185,6 +196,17 @@ dotenv = ["python-dotenv (>=0.10.4)"]
 email = ["email-validator (>=1.0.3)"]
 
 [[package]]
+name = "pygments"
+version = "2.13.0"
+description = "Pygments is a syntax highlighting package written in Python."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.extras]
+plugins = ["importlib-metadata"]
+
+[[package]]
 name = "pyparsing"
 version = "3.0.9"
 description = "pyparsing module - Classes and methods to define and execute parsing grammars"
@@ -235,12 +257,38 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use_chardet_on_py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
+name = "rich"
+version = "12.6.0"
+description = "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
+category = "main"
+optional = false
+python-versions = ">=3.6.3,<4.0.0"
+
+[package.dependencies]
+commonmark = ">=0.9.0,<0.10.0"
+pygments = ">=2.6.0,<3.0.0"
+
+[package.extras]
+jupyter = ["ipywidgets (>=7.5.1,<8.0.0)"]
+
+[[package]]
 name = "soupsieve"
 version = "2.3.2.post1"
 description = "A modern CSS selector implementation for Beautiful Soup."
 category = "main"
 optional = false
 python-versions = ">=3.6"
+
+[[package]]
+name = "textual"
+version = "0.1.18"
+description = "Text User Interface using Rich"
+category = "main"
+optional = false
+python-versions = ">=3.7,<4.0"
+
+[package.dependencies]
+rich = ">=12.3.0,<13.0.0"
 
 [[package]]
 name = "toml"
@@ -282,7 +330,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "d5534f151549295963292a73bdfddfeafb9f32f64c0fae1f06f366e5c3e3655c"
+content-hash = "ca454951fd200f158c1d5e771e5d5b8cbd936f39eb15ea9ee73ef49335a0f7ba"
 
 [metadata.files]
 atomicwrites = []
@@ -293,6 +341,7 @@ certifi = []
 charset-normalizer = []
 click = []
 colorama = []
+commonmark = []
 idna = []
 iniconfig = []
 mypy-extensions = []
@@ -302,10 +351,13 @@ platformdirs = []
 pluggy = []
 py = []
 pydantic = []
+pygments = []
 pyparsing = []
 pytest = []
 requests = []
+rich = []
 soupsieve = []
+textual = []
 toml = []
 tomli = []
 typing-extensions = []
