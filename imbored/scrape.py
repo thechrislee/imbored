@@ -11,7 +11,7 @@ class Scrape:
     def __init__(self, url: str = "events.html") -> None:
         self.url = url
 
-    def get_events(self) -> list:
+    def get_events(self) -> list[str]:
         """
         get the events
         working with local html file for the moment
@@ -19,18 +19,9 @@ class Scrape:
         # r = requests.get(self.url)
         soup = BeautifulSoup(open(self.url), "html.parser")
         event_data = [
-            json.loads(data.text)
-            for data in soup.find_all("script", type="application/ld+json")
+            data.text for data in soup.find_all("script", type="application/ld+json")
         ]
-
-        for event in event_data:
-            event["location"]["address"]["type"] = event["location"]["address"].pop(
-                "@type"
-            )
-            event["offers"]["type"] = event["offers"].pop("@type")
-            address = Address(**event["location"]["address"])
-            print(address)
-            #print(json.dumps(event, indent=4))
+        return event_data
 
     def print_events(
         self,
