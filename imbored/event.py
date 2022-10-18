@@ -60,9 +60,10 @@ class Event:
         event["location"]["address"]["type"] = event["location"]["address"].pop("@type")
         event["offers"]["type"] = event["offers"].pop("@type")
 
+        date_format = "%Y-%m-%dT%H:%M"
         name = event["name"]
-        startDate = event["startDate"]
-        endDate = event["endDate"]
+        startDate = datetime.strptime(event["startDate"], date_format)
+        endDate = datetime.strptime(event["endDate"], date_format)
         location = Location(Address(**event["location"]["address"]), event["name"])
         offers = Offer(**event["offers"])
         return cls(name, startDate, endDate, location, offers)
