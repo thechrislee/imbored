@@ -46,8 +46,8 @@ class Event:
     """Class for tracking event information"""
 
     name: str
-    startDate: str
-    endDate: str
+    startDate: datetime
+    endDate: datetime
     location: Location
     offers: Offer
 
