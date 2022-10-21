@@ -51,6 +51,20 @@ class Event:
     location: Location
     offers: Offer
 
+    def __str__(self):
+        """returns a description of the event."""
+        description = [
+            f"> {self.name}\n",
+            f"* start date: {self.startDate}\n",
+            f"* end date: {self.endDate}\n",
+            f"* price: {self.offers.price}\n"
+            f"\n",
+            f"* Address: \n\n",
+            f"\t{str(self.location.address)}"
+        ]
+
+        return "".join(description)
+
     @classmethod
     def from_json(cls, data: str) -> "Event":
         """
