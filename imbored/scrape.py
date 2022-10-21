@@ -4,6 +4,7 @@
 import requests
 from bs4 import BeautifulSoup
 
+
 class Scrape:
     def __init__(self, url: str = "events.html") -> None:
         self.url = url

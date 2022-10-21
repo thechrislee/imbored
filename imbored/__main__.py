@@ -10,7 +10,8 @@ def run():
     scraper = Scrape()
     event_data = scraper.get_events()
     for event in event_data:
-        print(Event.from_json(event))
+        e = Event.from_json(event)
+        print(e)
 
 
 if __name__ == "__main__":
