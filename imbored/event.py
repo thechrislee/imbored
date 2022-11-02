@@ -57,10 +57,9 @@ class Event:
             f"> {self.name}\n",
             f"* start date: {self.startDate}\n",
             f"* end date: {self.endDate}\n",
-            f"* price: {self.offers.price}\n"
-            f"\n",
+            f"* price: {self.offers.price}\n" f"\n",
             f"* Address: \n\n",
-            f"\t{str(self.location.address)}"
+            f"\t{str(self.location.address)}",
         ]
 
         return "".join(description)
